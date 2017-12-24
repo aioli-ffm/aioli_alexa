@@ -5,7 +5,6 @@
 
 const Alexa = require('alexa-sdk')
 var Speech = require('ssml-builder')
-const Aioli = require('./aioli.js')
 
 const APP_ID = process.env.APP_ID; // TODO replace with your app ID (OPTIONAL). const APP_ID = process.env.APP_ID
 
@@ -112,8 +111,6 @@ exports.handler = (event, context) => {
   alexa.APP_ID = APP_ID
   // To enable string internationalization (i18n) features, set a resources object.
   alexa.resources = languageStrings
-
-  // alexa.dynamoDBTableName = TABLE_NAME; // creates new table for userid:session.attributes
   alexa.registerHandlers(handlers)
   alexa.execute()
 }
