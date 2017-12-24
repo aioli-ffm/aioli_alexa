@@ -1,0 +1,4 @@
+GetNextEventIntent when is the next event
+GetNextEventIntent when is the next meetup
+GetNextEventIntent is aioli this week
+GetNextEventIntent when is it
