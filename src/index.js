@@ -48,7 +48,7 @@ const languageStrings = {
   'de-DE': {
     translation: {
       SKILL_NAME: 'Aioli skill',
-      HELP_MESSAGE: 'Du kannst eine Location einstellen, indem Du sagst, „Speichere die Stadt Frankfurt am Main“. Du kannst sagen, „Nenne mir die nächsten Meetups in Frankfurt am Main“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?',
+      HELP_MESSAGE: 'Du kannst nach dem naechsten aioli event fragen.',
       HELP_REPROMPT: 'Wie kann ich dir helfen?',
       STOP_MESSAGE: 'Auf Wiedersehen!'
     }
@@ -63,19 +63,27 @@ const onError = function (callback) {
 }
 
 const GetNextEvent = function (callback) {
-  var name = "Aioli events"
-  var description = "Events are on wednesdays."
+  var name = 'Aioli events'
+  var description = 'Events are on wednesdays.'
   var speech = new Speech()
-  speech.say("The next event is next week or this week.")
+  speech.say('The next event is next week or this week.')
   speech.pause('800ms')
-  speech.say("Trust me!")
+  speech.say('Trust me!')
 
   var speechOutput = speech.ssml(true)
   callback.emit(':tellWithCard', speechOutput, name, description)
 }
 
 const onLaunchRequest = function (callback) {
-  GetNextEvent(callback)
+  var name = 'Aioli events'
+  var description = 'We offer a platform for interesting talks, discussions, ' +
+    'presentations and hands-on-workshops about anything related to Artificial Intelligence' +
+    ' and Machine Learning in Frankfurt am Main. Meetings are on a bi-weekly basis and open to any interested student.'
+  var speech = new Speech()
+  speech.say(description)
+
+  var speechOutput = speech.ssml(true)
+  callback.emit(':tellWithCard', speechOutput, name, description)
 }
 
 const handlers = {

@@ -5,10 +5,6 @@ Alexa skill for aioli
 ### Short Skill Description
 
 ```
-Gives news abount aioli group
-```
-
-```
 Gives information about aioli group.
 ```
 
