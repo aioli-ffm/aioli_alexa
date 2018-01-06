@@ -74,6 +74,16 @@ const GetNextEvent = function (callback) {
   callback.emit(':tellWithCard', speechOutput, name, description)
 }
 
+const IsEventOn = function (date, callback) {
+  var name = 'Aioli events'
+  var description = 'Events are on wednesdays.'
+  var speech = new Speech()
+  speech.say('There is no aioli event on' + date)
+
+  var speechOutput = speech.ssml(true)
+  callback.emit(':tellWithCard', speechOutput, name, description)
+}
+
 const onLaunchRequest = function (callback) {
   var name = 'Aioli events'
   var description = 'We offer a platform for interesting talks, discussions, ' +
@@ -92,6 +102,10 @@ const handlers = {
   },
   'GetNextEventIntent': function () {
     GetNextEvent(this)
+  },
+  'IsEventAtIntent': function () {
+    var date = this.event.request.intent.slots.Date.value
+    IsEventOn(date, this)
   },
   'AMAZON.HelpIntent': function () {
     const speechOutput = this.t('HELP_MESSAGE')

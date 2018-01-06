@@ -1,4 +1,6 @@
 GetNextEventIntent when is the next event
 GetNextEventIntent when is the next meetup
-GetNextEventIntent is aioli this week
 GetNextEventIntent when is it
+IsEventAtIntent is aioli this week
+IsEventAtIntent can I go to aioli today
+IsEventAtIntent is aioli event on {Date}
