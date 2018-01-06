@@ -57,6 +57,31 @@ typings/
 # dotenv environment variables file
 .env
 
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.nav
+*.synctex.gz
+*.snm
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*.md5
+*.auxlock
+
+*.bak
+*.sav
+*.sta
+
 index.zip
 
-slides/
